@@ -7,6 +7,10 @@ const app = express();
 const port = process.env.PORT || 5000;
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
 app.get("/api/greet", (req, res) => {
   const name = req.query.name;
   if (!name) {
